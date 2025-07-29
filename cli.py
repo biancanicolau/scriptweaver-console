@@ -4,7 +4,7 @@ from rich.prompt import Prompt
 from rich import print
 import os
 
-from api_utils import get_current_ip  # adăugăm și alte funcții pe parcurs
+from api_utils import get_current_ip, get_random_joke  # adăugăm și alte funcții pe parcurs
 
 console = Console()
 
@@ -43,7 +43,9 @@ def main():
 
         elif choice == "2":
             print(">>> [cyan]Getting a joke...[/cyan]")
-            # TODO: Add joke function
+            joke = get_random_joke()
+            print(f"\n[italic yellow]{joke}[/italic yellow]")
+
 
         elif choice == "3":
             print(">>> [cyan]Writing to DynamoDB...[/cyan]")
