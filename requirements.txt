@@ -1,1 +1,6 @@
+pyfiglet
+rich
+requests
+boto3
+python-dotenv
 
