@@ -4,7 +4,7 @@ from rich.prompt import Prompt
 from rich import print
 import os
 
-from api_utils import get_public_ip  # adăugăm și alte funcții pe parcurs
+from api_utils import get_current_ip  # adăugăm și alte funcții pe parcurs
 
 console = Console()
 
@@ -38,7 +38,7 @@ def main():
 
         elif choice == "1":
             print(">>> [cyan]Fetching IP address...[/cyan]")
-            ip = get_public_ip()
+            ip = get_current_ip()
             print(f"\nYour current IP is: [bold green]{ip}[/bold green]")
 
         elif choice == "2":
