@@ -6,6 +6,8 @@ from datetime import datetime
 
 # Încarcă variabilele din .env
 load_dotenv()
+print("DEBUG: Table name from env:", os.getenv("DYNAMODB_TABLE"))
+
 
 # Setează detalii AWS
 table_name = os.getenv("DYNAMODB_TABLE")
