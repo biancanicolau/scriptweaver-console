@@ -4,7 +4,9 @@ from rich.prompt import Prompt
 from rich import print
 import os
 
-from api_utils import get_current_ip, get_random_joke  # adăugăm și alte funcții pe parcurs
+from api_utils import get_current_ip, get_random_joke 
+from aws_utils import write_mock_data
+
 
 console = Console()
 
@@ -48,8 +50,9 @@ def main():
 
 
         elif choice == "3":
-            print(">>> [cyan]Writing to DynamoDB...[/cyan]")
-            # TODO
+             print(">>> [cyan]Writing to DynamoDB...[/cyan]")
+             result = write_mock_data()
+             print(result)
 
         elif choice == "4":
             print(">>> [cyan]Reading from DynamoDB...[/cyan]")
