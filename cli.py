@@ -12,7 +12,7 @@ def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def show_banner():
-    banner = figlet_format("Scriptweaver", font="block")
+    banner = figlet_format("Scriptweaver", font="big")
     console.print(banner, style="bold cyan")
 
 def menu():
