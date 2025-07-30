@@ -48,12 +48,11 @@ def main():
             joke = get_random_joke()
             print(f"\n[italic yellow]{joke}[/italic yellow]")
 
-
         elif choice == "3":
             print(">>> Writing to DynamoDB...")
-            write_mock_data()  
-
-
+            result = write_mock_data()
+            print(result)
+  
         elif choice == "4":
             print(">>> [cyan]Reading from DynamoDB...[/cyan]")
             # TODO
