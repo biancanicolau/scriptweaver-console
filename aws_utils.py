@@ -12,7 +12,16 @@ table_name = os.getenv("DYNAMODB_TABLE")
 region = os.getenv("AWS_REGION")
 
 # Creează conexiunea la DynamoDB
-dynamodb = boto3.resource("dynamodb", region_name=region)
+access_key = os.getenv("AWS_ACCESS_KEY_ID")
+secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
+
+dynamodb = boto3.resource(
+    "dynamodb",
+    region_name=region,
+    aws_access_key_id=access_key,
+    aws_secret_access_key=secret_key
+)
+
 table = dynamodb.Table(table_name)
 
 def write_mock_data():
