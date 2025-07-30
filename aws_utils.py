@@ -31,6 +31,7 @@ def write_mock_data():
             "timestamp": datetime.utcnow().isoformat(),
             "note": "Sample data from Scriptweaver CLI"
         }
+        print(">>> Creating item:", item)  # DEBUG
         table.put_item(Item=item)
         return "✅ Data written to DynamoDB!"
     except Exception as e:
