@@ -50,9 +50,9 @@ def main():
 
 
         elif choice == "3":
-             print(">>> [cyan]Writing to DynamoDB...[/cyan]")
-             result = write_mock_data()
-             print(result)
+    print(">>> Writing to DynamoDB...")
+    write_mock_data()  
+
 
         elif choice == "4":
             print(">>> [cyan]Reading from DynamoDB...[/cyan]")
