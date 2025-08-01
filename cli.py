@@ -5,8 +5,7 @@ from rich import print
 import os
 
 from api_utils import get_current_ip, get_random_joke 
-from aws_utils import write_mock_data
-
+from aws_utils import write_mock_data, read_data
 
 console = Console()
 
@@ -55,7 +54,8 @@ def main():
   
         elif choice == "4":
             print(">>> [cyan]Reading from DynamoDB...[/cyan]")
-            # TODO
+            result = read_data()
+            print(result)
 
         elif choice == "5":
             print(">>> [cyan]Triggering Lambda (simulated)...[/cyan]")
