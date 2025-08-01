@@ -39,3 +39,17 @@ def write_mock_data():
     except Exception as e:
         return f"❌ Error writing to DynamoDB: {str(e)}"
 
+def read_data():
+    try:
+        response = table.scan()
+        items = response.get("Items", [])
+        if not items:
+            return "⚠️  No data found in DynamoDB."
+        output = "\n📦 Items found:\n"
+        for item in items:
+            output += f"- ID: {item.get('id')}, Note: {item.get('note')}, Time: {item.get('timestamp')}\n"
+        return output
+    except Exception as e:
+        return f"❌ Error reading from DynamoDB: {str(e)}"
+
+
